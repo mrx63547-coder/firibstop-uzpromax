@@ -1,45 +1,74 @@
 
-name: Live stats
+const fs = require("node:fs");
+const path = require("node:path");
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "23 * * * *"
+const outputPath = path.join(
+  process.cwd(),
+  "data",
+  "live-stats.json"
+);
 
-permissions:
-  contents: write
+async function main() {
+  const url =
+    "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json";
 
-jobs:
-  stats:
-    runs-on: ubuntu-latest
+  const response = await fetch(url, {
+    headers: { accept: "application/json" },
+    signal: AbortSignal.timeout(20000)
+  });
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  if (!response.ok) {
+    throw new Error(`CISA returned HTTP ${response.status}`);
+  }
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+  const json = await response.json();
 
-      - name: Check required files
-        run: |
-          test -f scripts/fetch-live-stats.js
-          test -f data/live-stats.json
+  if (!Array.isArray(json.vulnerabilities)) {
+    throw new Error("Invalid CISA response: vulnerabilities missing");
+  }
 
-      - name: Fetch live stats
-        env:
-          CLOUDFLARE_RADAR_API_TOKEN: ${{ secrets.CLOUDFLARE_RADAR_API_TOKEN }}
-        run: node scripts/fetch-live-stats.js
+  const now = new Date();
+  const cutoff = new Date(now);
+  cutoff.setDate(cutoff.getDate() - 30);
 
-      - name: Save updated stats
-        run: |
-          git config user.name "firibstop-bot"
-          git config user.email "bot@users.noreply.github.com"
-          git add data/live-stats.json
-          if ! git diff --cached --quiet; then
-            git commit -m "Update live stats"
-            git push
-          else
-            echo "No data changes to commit"
-          fi
+  const daily = new Map();
+
+  for (let i = 29; i >= 0; i--) {
+    const day = new Date(now);
+    day.setUTCDate(day.getUTCDate() - i);
+    daily.set(day.toISOString().slice(0, 10), 0);
+  }
+
+  for (const item of json.vulnerabilities) {
+    const date = item.dateAdded;
+    if (!date || date < cutoff.toISOString().slice(0, 10)) continue;
+
+    if (daily.has(date)) {
+      daily.set(date, daily.get(date) + 1);
+    }
+  }
+
+  const result = {
+    source: "CISA KEV",
+    sourceUrl: url,
+    metric: "Vulnerabilities added to the catalog per day",
+    updatedAt: now.toISOString(),
+    totalCatalogEntries: json.vulnerabilities.length,
+    last30Days: Array.from(daily, ([date, count]) => ({
+      date,
+      count
+    }))
+  };
+
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  fs.writeFileSync(outputPath, JSON.stringify(result, null, 2) + "\n");
+
+  console.log(
+    `Saved ${result.last30Days.length} daily points from CISA.`
+  );
+}
+
+main().catch((error) => {
+  console.error("Live stats update failed:", error);
+  process.exitCode = 1;
+});
