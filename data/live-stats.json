@@ -1,171 +1,129 @@
 {
- "generatedAt": "2026-10-28T09:12:38.854Z",
- "cloudflareRadar": {
-  "ok": true,
-  "period": "24h",
-  "origins": [
-   {
-    "code": "BR",
-    "name": "Brazil",
-    "value": 13.57
-   },
-   {
-    "code": "US",
-    "name": "United States",
-    "value": 12.28
-   },
-   {
-    "code": "SG",
-    "name": "Singapore",
-    "value": 5.2
-   },
-   {
-    "code": "CL",
-    "name": "Chile",
-    "value": 4.78
-   },
-   {
-    "code": "PL",
-    "name": "Poland",
-    "value": 4.45
-   },
-   {
-    "code": "RU",
-    "name": "Russian Federation",
-    "value": 3.94
-   },
-   {
-    "code": "AR",
-    "name": "Argentina",
-    "value": 3.26
-   },
-   {
-    "code": "MX",
-    "name": "Mexico",
-    "value": 3.12
-   },
-   {
-    "code": "FR",
-    "name": "France",
-    "value": 3.05
-   },
-   {
-    "code": "BD",
-    "name": "Bangladesh",
-    "value": 2.99
-   }
-  ],
-  "targets": [
-   {
-    "code": "US",
-    "name": "United States",
-    "value": 85.12
-   },
-   {
-    "code": "BR",
-    "name": "Brazil",
-    "value": 6.72
-   },
-   {
-    "code": "IN",
-    "name": "India",
-    "value": 4.03
-   },
-   {
-    "code": "HK",
-    "name": "Hong Kong",
-    "value": 3.18
-   },
-   {
-    "code": "DE",
-    "name": "Germany",
-    "value": 0.62
-   },
-   {
-    "code": "CN",
-    "name": "China",
-    "value": 0.16
-   },
-   {
-    "code": "CY",
-    "name": "Cyprus",
-    "value": 0.07
-   },
-   {
-    "code": "SE",
-    "name": "Sweden",
-    "value": 0.07
-   },
-   {
-    "code": "GB",
-    "name": "United Kingdom",
-    "value": 0.02
-   },
-   {
-    "code": "TW",
-    "name": "Taiwan",
-    "value": 0.01
-   }
-  ],
-  "uzbekistan": {
-   "asTarget": null,
-   "asOrigin": null
-  }
- },
- "feodoTracker": {
-  "ok": true,
-  "total": 5,
-  "online": 1,
-  "byMalware": [
-   {
-    "name": "QakBot",
-    "count": 1
-   }
-  ],
-  "byCountry": [
-   {
-    "name": "US",
-    "count": 1
-   }
+  "source": "CISA KEV",
+  "sourceUrl": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+  "metric": "Vulnerabilities added to the catalog per day",
+  "updatedAt": "2026-10-28T16:48:01.320Z",
+  "totalCatalogEntries": 1760,
+  "last30Days": [
+    {
+      "date": "2026-09-29",
+      "count": 1
+    },
+    {
+      "date": "2026-09-30",
+      "count": 1
+    },
+    {
+      "date": "2026-10-01",
+      "count": 1
+    },
+    {
+      "date": "2026-10-02",
+      "count": 2
+    },
+    {
+      "date": "2026-10-03",
+      "count": 0
+    },
+    {
+      "date": "2026-10-04",
+      "count": 1
+    },
+    {
+      "date": "2026-10-05",
+      "count": 0
+    },
+    {
+      "date": "2026-10-06",
+      "count": 0
+    },
+    {
+      "date": "2026-10-07",
+      "count": 0
+    },
+    {
+      "date": "2026-10-08",
+      "count": 5
+    },
+    {
+      "date": "2026-10-09",
+      "count": 0
+    },
+    {
+      "date": "2026-10-10",
+      "count": 0
+    },
+    {
+      "date": "2026-10-11",
+      "count": 0
+    },
+    {
+      "date": "2026-10-12",
+      "count": 0
+    },
+    {
+      "date": "2026-10-13",
+      "count": 2
+    },
+    {
+      "date": "2026-10-14",
+      "count": 4
+    },
+    {
+      "date": "2026-10-15",
+      "count": 1
+    },
+    {
+      "date": "2026-10-16",
+      "count": 2
+    },
+    {
+      "date": "2026-10-17",
+      "count": 0
+    },
+    {
+      "date": "2026-10-18",
+      "count": 0
+    },
+    {
+      "date": "2026-10-19",
+      "count": 0
+    },
+    {
+      "date": "2026-10-20",
+      "count": 6
+    },
+    {
+      "date": "2026-10-21",
+      "count": 0
+    },
+    {
+      "date": "2026-10-22",
+      "count": 0
+    },
+    {
+      "date": "2026-10-23",
+      "count": 2
+    },
+    {
+      "date": "2026-10-24",
+      "count": 0
+    },
+    {
+      "date": "2026-10-25",
+      "count": 0
+    },
+    {
+      "date": "2026-10-26",
+      "count": 2
+    },
+    {
+      "date": "2026-10-27",
+      "count": 2
+    },
+    {
+      "date": "2026-10-28",
+      "count": 0
+    }
   ]
- },
- "uzcert": {
-  "ok": true,
-  "items": [
-   {
-    "title": "Более 500 миллионов сайтов WordPress под угрозой? Новая критически опасная уязвимость «wp2shell» позволяет полностью захватить сервер удалённо!",
-    "url": "https://uzcert.uz/ru/are-more-than-500-million-wordpress-websites-at-risk-a-new-critical-wp2shell-vulnerability-allows-complete-remote-server-compromise/",
-    "date": "2026-07-20T04:58:34.000Z"
-   },
-   {
-    "title": "Пользователи Fortinet FortiSandbox, внимание! CISA предупреждает об опасных уязвимостях, активно эксплуатируемых в реальных кибератаках!",
-    "url": "https://uzcert.uz/ru/%d0%bf%d0%be%d0%bb%d1%8c%d0%b7%d0%be%d0%b2%d0%b0%d1%82%d0%b5%d0%bb%d0%b8-fortinet-fortisandbox-%d0%b2%d0%bd%d0%b8%d0%bc%d0%b0%d0%bd%d0%b8%d0%b5-cisa-%d0%bf%d1%80%d0%b5%d0%b4%d1%83%d0%bf%d1%80%d0%b5/",
-    "date": "2026-07-17T09:08:20.000Z"
-   },
-   {
-    "title": "Вы уверены в безопасности своего аккаунта Telegram? Хакеры захватывают даже аккаунты с включённой двухфакторной аутентификацией, похищая действующие сессии с помощью вредоносного ПО!",
-    "url": "https://uzcert.uz/ru/%d0%b2%d1%8b-%d1%83%d0%b2%d0%b5%d1%80%d0%b5%d0%bd%d1%8b-%d0%b2-%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d0%b8-%d1%81%d0%b2%d0%be%d0%b5%d0%b3%d0%be-%d0%b0%d0%ba%d0%ba%d0%b0/",
-    "date": "2026-07-16T14:09:16.000Z"
-   },
-   {
-    "title": "Вы уверены в безопасности своего NGINX-сервера? F5 предупредила об опасных уязвимостях, которые могут привести к удалённому выполнению кода!",
-    "url": "https://uzcert.uz/ru/%d0%b2%d1%8b-%d1%83%d0%b2%d0%b5%d1%80%d0%b5%d0%bd%d1%8b-%d0%b2-%d0%b1%d0%b5%d0%b7%d0%be%d0%bf%d0%b0%d1%81%d0%bd%d0%be%d1%81%d1%82%d0%b8-%d1%81%d0%b2%d0%be%d0%b5%d0%b3%d0%be-nginx-%d1%81%d0%b5%d1%80/",
-    "date": "2026-07-16T04:31:29.000Z"
-   },
-   {
-    "title": "Активно эксплуатируется 0-day уязвимость в Microsoft Active Directory Federation Services (AD FS). Находятся ли организации под угрозой?",
-    "url": "https://uzcert.uz/ru/%d0%b0%d0%ba%d1%82%d0%b8%d0%b2%d0%bd%d0%be-%d1%8d%d0%ba%d1%81%d0%bf%d0%bb%d1%83%d0%b0%d1%82%d0%b8%d1%80%d1%83%d0%b5%d1%82%d1%81%d1%8f-0-day-%d1%83%d1%8f%d0%b7%d0%b2%d0%b8%d0%bc%d0%be%d1%81%d1%82%d1%8c/",
-    "date": "2026-07-15T13:39:48.000Z"
-   },
-   {
-    "title": "Защита Windows BitLocker больше не является достаточной? Microsoft устранила 0-day уязвимость, позволяющую обходить механизм шифрования дисков!",
-    "url": "https://uzcert.uz/ru/%d0%b7%d0%b0%d1%89%d0%b8%d1%82%d0%b0-windows-bitlocker-%d0%b1%d0%be%d0%bb%d1%8c%d1%88%d0%b5-%d0%bd%d0%b5-%d1%8f%d0%b2%d0%bb%d1%8f%d0%b5%d1%82%d1%81%d1%8f-%d0%b4%d0%be%d1%81%d1%82%d0%b0%d1%82%d0%be/",
-    "date": "2026-07-15T13:28:36.000Z"
-   }
-  ]
- },
- "cisaKev": {
-  "ok": false,
-  "error": "CISA KEV ещё не получен. Запустите GitHub Actions → Live stats → Run workflow."
- }
 }
