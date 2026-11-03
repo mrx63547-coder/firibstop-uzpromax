@@ -2,7 +2,7 @@
   "source": "CISA KEV",
   "sourceUrl": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
   "metric": "Vulnerabilities added to the catalog per day",
-  "updatedAt": "2026-11-03T10:10:12.631Z",
+  "updatedAt": "2026-11-03T11:09:47.497Z",
   "totalCatalogEntries": 1766,
   "last30Days": [
     {
